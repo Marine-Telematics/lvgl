@@ -27,7 +27,7 @@
 
 #define LV_DPI_DEF 130 /*[px/inch]*/
 
-#define LV_DRAW_COMPLEX      1
+#define LV_DRAW_COMPLEX      0
 #define LV_SHADOW_CACHE_SIZE 0
 #define LV_CIRCLE_CACHE_SIZE 4
 
@@ -191,18 +191,18 @@
 
 #define LV_USE_TABLE 1
 
-#define LV_USE_ANIMIMG             1
+#define LV_USE_ANIMIMG             0
 #define LV_USE_CALENDAR            0
-#define LV_USE_CHART               1
-#define LV_USE_COLORWHEEL          1
-#define LV_USE_IMGBTN              1
+#define LV_USE_CHART               0
+#define LV_USE_COLORWHEEL          0
+#define LV_USE_IMGBTN              0
 #define LV_USE_KEYBOARD            0
 #define LV_USE_LED                 1
 #define LV_USE_LIST                1
 #define LV_USE_MENU                1
-#define LV_USE_METER               1
+#define LV_USE_METER               0
 #define LV_USE_MSGBOX              1
-#define LV_USE_SPAN                1
+#define LV_USE_SPAN                0
 #define LV_SPAN_SNIPPET_STACK_SIZE 64
 #define LV_USE_SPINBOX             1
 #define LV_USE_SPINNER             1
