@@ -2,7 +2,7 @@
  * GENERATED FILE, DO NOT EDIT IT!
  * @file lv_conf_internal.h
  * Make sure all the defines of lv_conf.h have a default value
-**/
+ **/
 
 #ifndef LV_CONF_INTERNAL_H
 #define LV_CONF_INTERNAL_H
@@ -1935,7 +1935,7 @@
         #ifdef CONFIG_LV_USE_THEME_MONO
             #define LV_USE_THEME_MONO CONFIG_LV_USE_THEME_MONO
         #else
-            #define LV_USE_THEME_MONO 0
+            #define LV_USE_THEME_MONO 1
         #endif
     #else
         #define LV_USE_THEME_MONO 1
