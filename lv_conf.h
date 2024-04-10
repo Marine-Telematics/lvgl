@@ -85,7 +85,7 @@
  *problem LV_LOG_LEVEL_ERROR       Only critical issue, when the system may fail
  *LV_LOG_LEVEL_USER        Only logs added by the user
  *LV_LOG_LEVEL_NONE        Do not log anything*/
-#define LV_LOG_LEVEL LV_LOG_LEVEL_WARN
+#define LV_LOG_LEVEL LV_LOG_LEVEL_ERROR
 
 #define LV_LOG_PRINTF 1
 
@@ -103,15 +103,15 @@
  *-----------*/
 
 #define LV_USE_ASSERT_NULL 1 /*Check if the parameter is NULL. (Very fast, recommended)*/
-#define LV_USE_ASSERT_MALLOC                                              \
-    1 /*Checks is the memory is successfully allocated or no. (Very fast, \
-         recommended)*/
-#define LV_USE_ASSERT_STYLE                                       \
-    1 /*Check if the styles are properly initialized. (Very fast, \
-         recommended)*/
+#define LV_USE_ASSERT_MALLOC                                                                     \
+    1                        /*Checks is the memory is successfully allocated or no. (Very fast, \
+                                recommended)*/
+#define LV_USE_ASSERT_STYLE                                                              \
+    1                        /*Check if the styles are properly initialized. (Very fast, \
+                                recommended)*/
 #define LV_USE_ASSERT_MEM_INTEGRITY \
-    0                       /*Check the integrity of `lv_mem` after critical operations. (Slow)*/
-#define LV_USE_ASSERT_OBJ 0 /*Check the object's type and existence (e.g. not deleted). (Slow)*/
+    0                        /*Check the integrity of `lv_mem` after critical operations. (Slow)*/
+#define LV_USE_ASSERT_OBJ 0  /*Check the object's type and existence (e.g. not deleted). (Slow)*/
 
 #define LV_ASSERT_HANDLER_INCLUDE <stdint.h>
 #define LV_ASSERT_HANDLER         abort();
@@ -283,7 +283,7 @@
 
 #define LV_USE_DROPDOWN 1 /*Requires: lv_label*/
 
-#define LV_USE_IMG 1 /*Requires: lv_label*/
+#define LV_USE_IMG 1      /*Requires: lv_label*/
 
 #define LV_USE_LABEL            1
 #define LV_LABEL_TEXT_SELECTION 1 /*Enable selecting text of the label*/
@@ -296,11 +296,11 @@
 #define LV_USE_ROLLER       1 /*Requires: lv_label*/
 #define LV_ROLLER_INF_PAGES 7 /*Number of extra "pages" when the roller is infinite*/
 
-#define LV_USE_SLIDER 1 /*Requires: lv_bar*/
+#define LV_USE_SLIDER 1       /*Requires: lv_bar*/
 
 #define LV_USE_SWITCH 1
 
-#define LV_USE_TEXTAREA 1 /*Requires: lv_label*/
+#define LV_USE_TEXTAREA 1                  /*Requires: lv_label*/
 #if LV_USE_TEXTAREA != 0
 #define LV_TEXTAREA_DEF_PWD_SHOW_TIME 1500 /*ms*/
 #endif
