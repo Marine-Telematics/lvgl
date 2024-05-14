@@ -242,7 +242,7 @@
 #define LV_USE_IMGFONT                 0
 #define LV_USE_MSG                     0
 #define LV_USE_IME_PINYIN              0
-#define LV_BUILD_EXAMPLES              1
+#define LV_BUILD_EXAMPLES              0
 #define LV_USE_DEMO_WIDGETS            0
 #define LV_USE_DEMO_KEYPAD_AND_ENCODER 0
 #define LV_USE_DEMO_BENCHMARK          0
