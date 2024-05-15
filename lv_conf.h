@@ -21,13 +21,13 @@
 #define LV_DISP_DEF_REFR_PERIOD  30 /*[ms]*/
 #define LV_INDEV_DEF_READ_PERIOD 30 /*[ms]*/
 
-#define LV_TICK_CUSTOM               1
+#define LV_TICK_CUSTOM               0
 #define LV_TICK_CUSTOM_INCLUDE       "esp_timer.h"
 #define LV_TICK_CUSTOM_SYS_TIME_EXPR (esp_timer_get_time() / 1000)
 
 #define LV_DPI_DEF 130 /*[px/inch]*/
 
-#define LV_DRAW_COMPLEX      0
+#define LV_DRAW_COMPLEX      1
 #define LV_SHADOW_CACHE_SIZE 0
 #define LV_CIRCLE_CACHE_SIZE 4
 
@@ -191,18 +191,18 @@
 
 #define LV_USE_TABLE 1
 
-#define LV_USE_ANIMIMG             0
+#define LV_USE_ANIMIMG             1
 #define LV_USE_CALENDAR            0
 #define LV_USE_CHART               0
-#define LV_USE_COLORWHEEL          0
+#define LV_USE_COLORWHEEL          1
 #define LV_USE_IMGBTN              0
 #define LV_USE_KEYBOARD            0
 #define LV_USE_LED                 1
 #define LV_USE_LIST                1
 #define LV_USE_MENU                1
-#define LV_USE_METER               0
+#define LV_USE_METER               1
 #define LV_USE_MSGBOX              1
-#define LV_USE_SPAN                0
+#define LV_USE_SPAN                1
 #define LV_SPAN_SNIPPET_STACK_SIZE 64
 #define LV_USE_SPINBOX             1
 #define LV_USE_SPINNER             1
@@ -242,7 +242,7 @@
 #define LV_USE_IMGFONT                 0
 #define LV_USE_MSG                     0
 #define LV_USE_IME_PINYIN              0
-#define LV_BUILD_EXAMPLES              1
+#define LV_BUILD_EXAMPLES              0
 #define LV_USE_DEMO_WIDGETS            0
 #define LV_USE_DEMO_KEYPAD_AND_ENCODER 0
 #define LV_USE_DEMO_BENCHMARK          0
