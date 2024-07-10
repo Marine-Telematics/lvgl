@@ -127,7 +127,7 @@
 
 #define LV_FONT_CUSTOM_DECLARE
 
-#define LV_FONT_DEFAULT        &lv_font_montserrat_12
+#define LV_FONT_DEFAULT        &lv_font_montserrat_10
 #define LV_FONT_FMT_TXT_LARGE  0
 #define LV_USE_FONT_COMPRESSED 0
 
@@ -250,4 +250,3 @@
 #define LV_USE_DEMO_MUSIC              0
 
 #endif /*LV_CONF_H*/
-
