@@ -21,8 +21,8 @@
 #define LV_DISP_DEF_REFR_PERIOD  30 /*[ms]*/
 #define LV_INDEV_DEF_READ_PERIOD 30 /*[ms]*/
 
-#define LV_TICK_CUSTOM               0
-#define LV_TICK_CUSTOM_INCLUDE       "esp_timer.h"
+#define LV_TICK_CUSTOM               1
+#define LV_TICK_CUSTOM_INCLUDE       <esp_timer.h>
 #define LV_TICK_CUSTOM_SYS_TIME_EXPR (esp_timer_get_time() / 1000)
 
 #define LV_DPI_DEF 130 /*[px/inch]*/
@@ -125,18 +125,15 @@
 #define LV_FONT_UNSCII_8  0
 #define LV_FONT_UNSCII_16 0
 
-#define LV_FONT_CUSTOM_DECLARE
+#define LV_FONT_CUSTOM_DECLARE    \
+    LV_FONT_DECLARE(tom_thumb)    \
+    LV_FONT_DECLARE(tom_thumb_10) \
+    LV_FONT_DECLARE(home_video)
 
-#define LV_FONT_DEFAULT        &lv_font_montserrat_10
+#define LV_FONT_DEFAULT        &lv_font_montserrat_12
 #define LV_FONT_FMT_TXT_LARGE  0
 #define LV_USE_FONT_COMPRESSED 0
-
-#define LV_USE_FONT_SUBPX 0
-#if LV_USE_FONT_SUBPX
-/*Set the pixel order of the display. Physical order of RGB channels.
- * Doesn't matter with "normal" fonts.*/
-#define LV_FONT_SUBPX_BGR 0 /*0: RGB; 1:BGR order*/
-#endif
+#define LV_USE_FONT_SUBPX      0
 
 #define LV_USE_FONT_PLACEHOLDER 1
 
@@ -210,9 +207,9 @@
 #define LV_USE_TILEVIEW            1
 #define LV_USE_WIN                 1
 
-#define LV_USE_THEME_DEFAULT             1
-#define LV_THEME_DEFAULT_DARK            1
-#define LV_THEME_DEFAULT_GROW            1
+#define LV_USE_THEME_DEFAULT             0
+#define LV_THEME_DEFAULT_DARK            0
+#define LV_THEME_DEFAULT_GROW            0
 #define LV_THEME_DEFAULT_TRANSITION_TIME 80
 
 #define LV_USE_THEME_BASIC 0
