@@ -17,8 +17,8 @@
  *=========================*/
 
 #define LV_MEM_CUSTOM         1
-#define LV_MEM_SIZE           (48 * 1024 /* 48Kb as described in lvgl docs */)
-#define LV_MEM_CUSTOM_INCLUDE <stdlib.h> /*Header for the dynamic memory function*/
+#define LV_MEM_SIZE           (52 * 1024 /* 48Kb as described in lvgl docs */)
+#define LV_MEM_CUSTOM_INCLUDE <stdlib.h>
 #define LV_MEM_CUSTOM_ALLOC   malloc
 #define LV_MEM_CUSTOM_FREE    free
 #define LV_MEM_CUSTOM_REALLOC realloc
@@ -102,16 +102,18 @@
  * Asserts
  *-----------*/
 
-#define LV_USE_ASSERT_NULL 1 /*Check if the parameter is NULL. (Very fast, recommended)*/
-#define LV_USE_ASSERT_MALLOC                                                                     \
-    1                        /*Checks is the memory is successfully allocated or no. (Very fast, \
-                                recommended)*/
-#define LV_USE_ASSERT_STYLE                                                              \
-    1                        /*Check if the styles are properly initialized. (Very fast, \
-                                recommended)*/
+#define LV_USE_ASSERT_NULL \
+    1 /*Check if the parameter is NULL. (Very fast, recommended)*/
+#define LV_USE_ASSERT_MALLOC                                              \
+    1 /*Checks is the memory is successfully allocated or no. (Very fast, \
+         recommended)*/
+#define LV_USE_ASSERT_STYLE                                       \
+    1 /*Check if the styles are properly initialized. (Very fast, \
+         recommended)*/
 #define LV_USE_ASSERT_MEM_INTEGRITY \
-    0                        /*Check the integrity of `lv_mem` after critical operations. (Slow)*/
-#define LV_USE_ASSERT_OBJ 0  /*Check the object's type and existence (e.g. not deleted). (Slow)*/
+    0 /*Check the integrity of `lv_mem` after critical operations. (Slow)*/
+#define LV_USE_ASSERT_OBJ \
+    0 /*Check the object's type and existence (e.g. not deleted). (Slow)*/
 
 #define LV_ASSERT_HANDLER_INCLUDE <stdint.h>
 #define LV_ASSERT_HANDLER         abort();
@@ -205,8 +207,9 @@
 /*Demonstrate special features*/
 #define LV_FONT_MONTSERRAT_12_SUBPX      0
 #define LV_FONT_MONTSERRAT_28_COMPRESSED 0 /*bpp = 3*/
-#define LV_FONT_DEJAVU_16_PERSIAN_HEBREW 0 /*Hebrew, Arabic, Persian letters and all their forms*/
-#define LV_FONT_SIMSUN_16_CJK            0 /*1000 most common CJK radicals*/
+#define LV_FONT_DEJAVU_16_PERSIAN_HEBREW \
+    0 /*Hebrew, Arabic, Persian letters and all their forms*/
+#define LV_FONT_SIMSUN_16_CJK 0 /*1000 most common CJK radicals*/
 
 /*Pixel perfect monospace fonts*/
 #define LV_FONT_UNSCII_8  0
@@ -283,7 +286,7 @@
 
 #define LV_USE_DROPDOWN 1 /*Requires: lv_label*/
 
-#define LV_USE_IMG 1      /*Requires: lv_label*/
+#define LV_USE_IMG 1 /*Requires: lv_label*/
 
 #define LV_USE_LABEL            1
 #define LV_LABEL_TEXT_SELECTION 1 /*Enable selecting text of the label*/
@@ -293,14 +296,15 @@
 
 #define LV_USE_LINE 1
 
-#define LV_USE_ROLLER       1 /*Requires: lv_label*/
-#define LV_ROLLER_INF_PAGES 7 /*Number of extra "pages" when the roller is infinite*/
+#define LV_USE_ROLLER 1 /*Requires: lv_label*/
+#define LV_ROLLER_INF_PAGES \
+    7 /*Number of extra "pages" when the roller is infinite*/
 
-#define LV_USE_SLIDER 1       /*Requires: lv_bar*/
+#define LV_USE_SLIDER 1 /*Requires: lv_bar*/
 
 #define LV_USE_SWITCH 1
 
-#define LV_USE_TEXTAREA 1                  /*Requires: lv_label*/
+#define LV_USE_TEXTAREA 1 /*Requires: lv_label*/
 #if LV_USE_TEXTAREA != 0
 #define LV_TEXTAREA_DEF_PWD_SHOW_TIME 1500 /*ms*/
 #endif
@@ -320,22 +324,14 @@
 #if LV_USE_CALENDAR
 #define LV_CALENDAR_WEEK_STARTS_MONDAY 0
 #if LV_CALENDAR_WEEK_STARTS_MONDAY
-#define LV_CALENDAR_DEFAULT_DAY_NAMES            \
-    {                                            \
-        "Mo", "Tu", "We", "Th", "Fr", "Sa", "Su" \
-    }
+#define LV_CALENDAR_DEFAULT_DAY_NAMES {"Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"}
 #else
-#define LV_CALENDAR_DEFAULT_DAY_NAMES            \
-    {                                            \
-        "Su", "Mo", "Tu", "We", "Th", "Fr", "Sa" \
-    }
+#define LV_CALENDAR_DEFAULT_DAY_NAMES {"Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"}
 #endif
 
-#define LV_CALENDAR_DEFAULT_MONTH_NAMES                                                        \
-    {                                                                                          \
-        "January", "February", "March", "April", "May", "June", "July", "August", "September", \
-            "October", "November", "December"                                                  \
-    }
+#define LV_CALENDAR_DEFAULT_MONTH_NAMES                                 \
+    {"January", "February", "March",     "April",   "May",      "June", \
+     "July",    "August",   "September", "October", "November", "December"}
 #define LV_USE_CALENDAR_HEADER_ARROW    1
 #define LV_USE_CALENDAR_HEADER_DROPDOWN 1
 #endif /*LV_USE_CALENDAR*/
