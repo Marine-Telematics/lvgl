@@ -1568,11 +1568,11 @@ void UnityAssertEqualMemory(UNITY_INTERNAL_PTR expected,
 
 static union
 {
-    UNITY_INT8 i8;
-    UNITY_INT16 i16;
-    UNITY_INT32 i32;
+    UNITY_INT8 int8_t;
+    UNITY_INT16 int16_t;
+    UNITY_INT32 int;
 #ifdef UNITY_SUPPORT_64
-    UNITY_INT64 i64;
+    UNITY_INT64 int64_t;
 #endif
 #ifndef UNITY_EXCLUDE_FLOAT
     float f;
@@ -1587,22 +1587,22 @@ UNITY_INTERNAL_PTR UnityNumToPtr(const UNITY_INT num, const UNITY_UINT8 size)
     switch(size)
     {
         case 1:
-            UnityQuickCompare.i8 = (UNITY_INT8)num;
-            return (UNITY_INTERNAL_PTR)(&UnityQuickCompare.i8);
+            UnityQuickCompare.int8_t = (UNITY_INT8)num;
+            return (UNITY_INTERNAL_PTR)(&UnityQuickCompare.int8_t);
 
         case 2:
-            UnityQuickCompare.i16 = (UNITY_INT16)num;
-            return (UNITY_INTERNAL_PTR)(&UnityQuickCompare.i16);
+            UnityQuickCompare.int16_t = (UNITY_INT16)num;
+            return (UNITY_INTERNAL_PTR)(&UnityQuickCompare.int16_t);
 
 #ifdef UNITY_SUPPORT_64
         case 8:
-            UnityQuickCompare.i64 = (UNITY_INT64)num;
-            return (UNITY_INTERNAL_PTR)(&UnityQuickCompare.i64);
+            UnityQuickCompare.int64_t = (UNITY_INT64)num;
+            return (UNITY_INTERNAL_PTR)(&UnityQuickCompare.int64_t);
 #endif
 
         default: /* 4 bytes */
-            UnityQuickCompare.i32 = (UNITY_INT32)num;
-            return (UNITY_INTERNAL_PTR)(&UnityQuickCompare.i32);
+            UnityQuickCompare.int = (UNITY_INT32)num;
+            return (UNITY_INTERNAL_PTR)(&UnityQuickCompare.int);
     }
 }
 

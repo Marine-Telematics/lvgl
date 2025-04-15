@@ -151,8 +151,8 @@ void lv_init(void)
     /*Test if the IDE has UTF-8 encoding*/
     const char * txt = "Á";
 
-    const uint8_t * txt_u8 = (uint8_t *)txt;
-    if(txt_u8[0] != 0xc3 || txt_u8[1] != 0x81 || txt_u8[2] != 0x00) {
+    const uint8_t * txt_uint8_t = (uint8_t *)txt;
+    if(txt_uint8_t[0] != 0xc3 || txt_uint8_t[1] != 0x81 || txt_uint8_t[2] != 0x00) {
         LV_LOG_WARN("The strings have no UTF-8 encoding. Non-ASCII characters won't be displayed.");
     }
 

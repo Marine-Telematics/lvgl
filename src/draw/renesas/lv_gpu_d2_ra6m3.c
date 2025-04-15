@@ -519,11 +519,11 @@ static void lv_port_gpu_blit_internal(const lv_area_t * dest_area, const lv_colo
         int x, y, x1, y1, x2, y2, x3, y3, x4, y4, dxu, dxv, dyu, dyv, xx, xy, yx, yy;
         int pivot_scaled_x, pivot_scaled_y;
         int tex_offset = (flags & d2_bf_filter) ? -32767 : 0;
-        d2_u8 amode, cmode = d2_to_copy;
+        d2_uint8_t amode, cmode = d2_to_copy;
         float angle = ((float)img_dsc.angle / 10) * M_PI / 180;
         float cos_angle = cosf(angle);
         float sin_angle = sinf(angle);
-        d2_u8 fillmode_backup;
+        d2_uint8_t fillmode_backup;
 
         /* setup texture params */
         fillmode_backup = d2_getfillmode(_d2_handle);

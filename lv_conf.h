@@ -217,6 +217,7 @@
 
 #define LV_FONT_CUSTOM_DECLARE      \
     LV_FONT_DECLARE(olney_light_15) \
+    LV_FONT_DECLARE(olney_light_11) \
     LV_FONT_DECLARE(icons)          \
     LV_FONT_DECLARE(icons_68) LV_FONT_DECLARE(boat_icon_65)
 #define LV_FONT_DEFAULT &olney_light_15

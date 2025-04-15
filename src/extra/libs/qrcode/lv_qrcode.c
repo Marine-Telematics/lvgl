@@ -123,7 +123,7 @@ lv_res_t lv_qrcode_update(lv_obj_t * qrcode, const void * data, uint32_t data_le
     scale = obj_w / qr_size;
     int scaled = qr_size * scale;
     int margin = (obj_w - scaled) / 2;
-    uint8_t * buf_u8 = (uint8_t *)imgdsc->data + 8;    /*+8 skip the palette*/
+    uint8_t * buf_uint8_t = (uint8_t *)imgdsc->data + 8;    /*+8 skip the palette*/
 
     /* Copy the qr code canvas:
      * A simple `lv_canvas_set_px` would work but it's slow for so many pixels.
@@ -149,7 +149,7 @@ lv_res_t lv_qrcode_update(lv_obj_t * qrcode, const void * data, uint32_t data_le
                 p++;
                 if(p == 8) {
                     uint32_t px = row_byte_cnt * y + (x >> 3);
-                    buf_u8[px] = b;
+                    buf_uint8_t[px] = b;
                     b = 0;
                     p = 0;
                 }
@@ -162,14 +162,14 @@ lv_res_t lv_qrcode_update(lv_obj_t * qrcode, const void * data, uint32_t data_le
             b |= (1 << (8 - p)) - 1;
 
             uint32_t px = row_byte_cnt * y + (x >> 3);
-            buf_u8[px] = b;
+            buf_uint8_t[px] = b;
         }
 
         /*The Qr is probably scaled so simply to the repeated rows*/
         int s;
-        const uint8_t * row_ori = buf_u8 + row_byte_cnt * y;
+        const uint8_t * row_ori = buf_uint8_t + row_byte_cnt * y;
         for(s = 1; s < scale; s++) {
-            lv_memcpy((uint8_t *)buf_u8 + row_byte_cnt * (y + s), row_ori, row_byte_cnt);
+            lv_memcpy((uint8_t *)buf_uint8_t + row_byte_cnt * (y + s), row_ori, row_byte_cnt);
         }
     }
 
