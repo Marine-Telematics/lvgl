@@ -117,9 +117,16 @@
 
 #define LV_ASSERT_HANDLER_INCLUDE <stdint.h>
 #define LV_ASSERT_HANDLER         abort();
-/*1: Show CPU usage and FPS count*/
-#define LV_USE_PERF_MONITOR    0
-#define LV_USE_MEM_MONITOR     0
+/*1: Show CPU usage and FPS count. Enabled automatically on demo/bench
+ * builds (CONFIG_CM_DEMO_MODE); production never shows it.*/
+#include "sdkconfig.h"
+#ifdef CONFIG_CM_DEMO_MODE
+#define LV_USE_PERF_MONITOR 1
+#else
+#define LV_USE_PERF_MONITOR 0
+#endif
+#define LV_USE_PERF_MONITOR_POS LV_ALIGN_BOTTOM_LEFT /* TestBench badge sits bottom-right */
+#define LV_USE_MEM_MONITOR      0
 #define LV_USE_MEM_MONITOR_POS LV_ALIGN_BOTTOM_LEFT
 
 #define LV_USE_REFR_DEBUG    0
